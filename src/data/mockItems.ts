@@ -1,4 +1,4 @@
-import { Item } from '../types';
+import type { Item } from '../types';
 
 // Comprehensive mock item data for League of Legends
 export const MOCK_ITEMS: { [key: string]: Item } = {
@@ -699,7 +699,7 @@ export const MOCK_ITEMS: { [key: string]: Item } = {
     maps: { '11': true },
     depth: 2,
   },
-  '3742': {
+  '3748': {
     id: '3748',
     name: 'Titanic Hydra',
     description: '+500 Health<br>+40 Attack Damage<br><br><unique>UNIQUE Passive - Cleave:</unique> Basic attacks on-hit deal physical damage to your target and nearby enemies.',

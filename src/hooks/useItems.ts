@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Item, DataDragonResponse } from '../types';
+import type { Item, DataDragonResponse } from '../types';
 import { transformDataDragonItem, filterValidItems } from '../utils/itemUtils';
 import { MOCK_ITEMS } from '../data/mockItems';
 

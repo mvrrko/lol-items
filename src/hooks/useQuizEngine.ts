@@ -1,7 +1,6 @@
 import { useState, useCallback } from 'react';
-import { Item, QuizQuestion, QuizResult } from '../types';
+import type { Item, QuizQuestion, QuizResult } from '../types';
 import { useXP } from './useXP';
-import { getRandomItems } from '../utils/quizUtils';
 
 interface QuizState {
   currentQuestion: number;

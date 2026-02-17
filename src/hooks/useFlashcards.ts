@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { Item, FlashcardData } from '../types';
+import type { Item } from '../types';
 import { useXP } from './useXP';
 
 export function useFlashcards(items: Item[]) {

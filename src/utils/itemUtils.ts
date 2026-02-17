@@ -1,4 +1,4 @@
-import { Item } from '../types';
+import type { Item } from '../types';
 import { SUMMONERS_RIFT_MAP_ID } from '../data/constants';
 
 // Transform Data Dragon item data to our Item interface
@@ -87,8 +87,8 @@ export const getItemImageUrl = (version: string, imageName: string): string => {
 };
 
 // Parse item stats into readable format
-export const parseItemStats = (stats: { [key: string]: number }): string[] => {
+export const parseItemStats = (stats: { [key: string]: number | undefined }): string[] => {
   return Object.entries(stats)
-    .filter(([_, value]) => value > 0)
-    .map(([key, value]) => `+${formatStatValue(key, value)} ${getStatDisplayName(key)}`);
+    .filter(([_, value]) => value !== undefined && value > 0)
+    .map(([key, value]) => `+${formatStatValue(key, value as number)} ${getStatDisplayName(key)}`);
 };

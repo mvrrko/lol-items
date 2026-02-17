@@ -1,5 +1,5 @@
 import { useLocalStorage } from './useLocalStorage';
-import { UserProgress } from '../types';
+import type { UserProgress } from '../types';
 import { STORAGE_KEYS } from '../utils/storageUtils';
 import { calculateLevel, calculateXPReward } from '../utils/xpUtils';
 import { useState, useCallback } from 'react';
@@ -28,10 +28,12 @@ export function useXP() {
       correct: boolean,
       timeToAnswer: number,
       difficulty: 'easy' | 'medium' | 'hard'
-    ) => {
+    ): number => {
+      let xpGained = 0;
+      
       setProgress((prev) => {
         const newStreak = correct ? prev.currentStreak + 1 : 0;
-        const xpGained = calculateXPReward(correct, timeToAnswer, difficulty, prev.currentStreak);
+        xpGained = calculateXPReward(correct, timeToAnswer, difficulty, prev.currentStreak);
         const newXP = prev.xp + xpGained;
         const oldLevel = calculateLevel(prev.xp);
         const newLevel = calculateLevel(newXP);
@@ -53,6 +55,8 @@ export function useXP() {
           bestStreak: Math.max(prev.bestStreak, newStreak),
         };
       });
+      
+      return xpGained;
     },
     [setProgress]
   );

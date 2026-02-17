@@ -1,4 +1,4 @@
-import { Item } from '../types';
+import type { Item } from '../types';
 
 // Shuffle an array using Fisher-Yates algorithm
 export const shuffleArray = <T>(array: T[]): T[] => {
