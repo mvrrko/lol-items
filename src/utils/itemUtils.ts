@@ -60,6 +60,7 @@ export const getStatDisplayName = (statKey: string): string => {
     FlatMagicDamageMod: 'Ability Power',
     PercentAttackSpeedMod: 'Attack Speed',
     PercentMovementSpeedMod: 'Movement Speed',
+    FlatMovementSpeedMod: 'Movement Speed',
     FlatCritChanceMod: 'Critical Strike Chance',
     PercentLifeStealMod: 'Life Steal',
     FlatHPRegenMod: 'Health Regen',
